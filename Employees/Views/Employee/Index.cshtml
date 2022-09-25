@@ -15,8 +15,17 @@
 <div class="container p-3">
 
     <div class="row pt-4">
-        <div class="col-6">        <h2 class="text-primary">Employee List</h2>    </div>
-   
+        <div class="col-6">        
+            
+         <h2 class="text-primary">Employee List</h2>    </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Employee" asp-action="AddEmployee" class="btn btn-primary">
+                <i class="bi bi-plus-circle">
+                    &nbsp;
+                    Create New Employee
+                </i>
+            </a>
+        </div>
     </div>
     <br />  <br />
 
@@ -56,17 +65,10 @@
                     <td width="20%">
                         @obj.EmployeeBirthDate
                     </td>
-                    <td width="15%">
+                    <td width="20%">
                         @obj.PhoneNumber
                     </td>
-                    <td class="w-30 btn btn-group" role="group">
-                        <a asp-action="AddEmployee" asp-controller="Employee" asp-route-id="@obj.EmployeeId"
-                       class="mx-1 btn btn-primary">
-                            <i class="bi bi-pencil-square"></i>
-                          Add 
-                        </a>
-
-                    </td>
+                 
                     <td class="w-20 btn btn-group" role="group">
                         <a asp-action="edit" asp-controller="Employee" asp-route-id="@obj.EmployeeId"
                        class="mx-1 btn btn-primary">
