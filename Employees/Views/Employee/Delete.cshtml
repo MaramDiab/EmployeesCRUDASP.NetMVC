@@ -1,0 +1,45 @@
+﻿@model Employee
+
+<form method="post" asp-action="DeletePost">
+    <input asp-for="EmployeeId" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">
+                Delete Employee
+            </h2>
+            <hr />
+        </div>
+        @*        <div asp-validation-summary="All"></div>*@
+        <div class="mb-3">
+            <label asp-for="EmployeeName"></label>
+            <input asp-for="EmployeeName" disabled class="form-control" />
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="EmployeeEmail"></label>
+            <input asp-for="EmployeeEmail" disabled class="form-control" />
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="EmployeeBirthDate"></label>
+            <input asp-for="EmployeeBirthDate" disabled class="form-control" />
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="PhoneNumber"></label>
+            <input asp-for="PhoneNumber" disabled class="form-control" />
+
+        </div>
+        <button type="submit" class="btn btn-danger " style="width:150px">Delete</button>
+        <a asp-action="Index" asp-controller="Category" class="btn btn-secondary">Back to list</a>
+    </div>
+
+</form>
+
+@* validation on the client side without go back to the server by adding the partial validation *@
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+      }
+

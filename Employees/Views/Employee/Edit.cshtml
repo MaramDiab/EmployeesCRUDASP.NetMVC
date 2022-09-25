@@ -1,0 +1,43 @@
+﻿@model Employee
+<form method="post" asp-action="Edit">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">
+          Edit Employee Information 
+            </h2>
+            <hr />
+        </div>
+        @*        <div asp-validation-summary="All"></div>*@
+        <div class="mb-3">
+            <label asp-for="EmployeeName"></label>
+            <input asp-for ="EmployeeName" class="form-control" />
+            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="EmployeeEmail"></label>
+            <input asp-for="EmployeeEmail" class="form-control" />
+            <span asp-validation-for="EmployeeEmail" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="EmployeeBirthDate"></label>
+            <input asp-for="EmployeeBirthDate" class="form-control" />
+            <span asp-validation-for="EmployeeBirthDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="PhoneNumber"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn " style="width:150px">Update</button>
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-secondary">Back to list</a>
+    </div>
+
+</form>
+
+@* validation on the client side without go back to the server by adding the partial validation *@
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+      }
+
